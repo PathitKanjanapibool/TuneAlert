@@ -57,7 +57,7 @@ public final class Song {
 
     public List<String> tags() {
         // TODO(1.3): ✗ ส่งลูกศรออกไปตรง ๆ = rep exposure ขาออก → คืน "สำเนา"
-        return List.copyOf(tags);
+        return new ArrayList<>(tags);
     }
 
     // ---------- producer ----------
@@ -88,7 +88,7 @@ public final class Song {
         if(!(o instanceof Song)) return false;
         Song r = (Song) o;
         checkRep();
-        return title == r.title && artist == r.artist && tags == r.tags;
+        return title.equals(r.title) && artist.equals(r.artist) && tags.equals(r.tags);
     }
 
     
